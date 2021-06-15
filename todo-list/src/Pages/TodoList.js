@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { color,typography, border, breakpoint} from '../StyleGuide/styles'
 import Input from '../Components/Input'
 import Title from '../Components/Title'
+import TodoNote from '../Components/TodoList/TodoNote'
 const Container = styled.div`
     width:100%;
     margin:auto;
@@ -23,42 +24,7 @@ const Container = styled.div`
     }
     
 `
-const TodoListWhapper = styled.div`
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    justify-content:flex-start;
-    border-radius:${border.border4};
-    background: ${color.white};
     
-    
-    `
-    const Header = styled.div`
-    border-radius: 4px 4px 0 0 ;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;        
-        width:100%;
-        background:${color.primary0};
-        padding:8px;
-        h2{
-            ${typography.header_1(color.dark2)}
-            font-weight: 400;
-        }
-    
-`
-const TodoListBody = styled.ul`
-    width:100%;
-    padding:8px;
-    li{
-        margin-bottom:8px;
-        width:100%;
-        ${typography.paragraph_bold(color.dark2)}
-        border-bottom: 1px solid ${color.dark2};
-    }
-`
 const Todo =  (props) => {
     
     const [items, setItems] = useState([])
@@ -69,9 +35,10 @@ const Todo =  (props) => {
     }
     function AddItem(event) {
         event.preventDefault()
-        setItems(([...items, text]))
-        setText("")
-        
+        if(text){
+            setItems(([...items, text]))
+            setText("")
+        }
     }
     return(
         <Container>
@@ -79,14 +46,7 @@ const Todo =  (props) => {
             <form>
                 <Input value={text} onClickButton={AddItem} onChange={handleChange} buttonText="Adicionar" placeholder="Adicione uma tarefa" type='text'></Input>               
             </form>
-            <TodoListWhapper>
-                <Header>
-                    <h2>lista de Tarefas</h2>
-                </Header>
-                <TodoListBody>
-                    {items.map((item,index)=><li key={index}>{item}</li>)}
-                </TodoListBody>
-            </TodoListWhapper>
+            <TodoNote items={items}/>
         </Container>
 
     )
