@@ -1,6 +1,6 @@
 import { color, shadow, border,typography,breakpoint } from "../StyleGuide/styles"
 import styled from "styled-components"
-import { MdSearch } from 'react-icons/md';
+import { MdAdd } from 'react-icons/md';
 
 const Btn =styled.button`
 width: fit-content;
@@ -27,7 +27,7 @@ display: inline-flex;
 align-items: center;
 justify-content: center;
 background-color: ${color.primary0};
-border-radius: 0 32px 32px 0;
+border-radius: 0 8px 8px 0;
 margin: 0 auto;
 padding: 8px 12px;
 overflow: hidden;
@@ -54,7 +54,7 @@ svg{
 }
 `
 const Text = styled.p`
-    
+    padding:8px;
     ${typography.paragraph_bold(color.white)}
     text-align: center;
     &::selection {
@@ -82,17 +82,17 @@ export const button_small = styled.button`
 `    
 export default function Button (props){
     return(
-        <SearchButton>
+        <Btn>
             <Text>
             {props.children}
             </Text>
-        </SearchButton>
+        </Btn>
     )
 }
 export function SearchButton (props){
     return(
         <SearchBtn onClick={props.onClick} type="button">
-        <MdSearch/>
+        <MdAdd/>
             <Text>
             {props.children}
             </Text>       

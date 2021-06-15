@@ -1,7 +1,7 @@
-import Cep from './Pages/Cep'
+import TodoList from './Pages/TodoList'
 import Navbar from './Components/Header';
 import scroll from './StyleGuide/atoms/scroll';
-import { animation } from './StyleGuide/styles';
+import { animation, color } from './StyleGuide/styles';
 import { createGlobalStyle } from 'styled-components';
 import {
   BrowserRouter as Router,
@@ -16,6 +16,15 @@ const GlobalStyle = createGlobalStyle`
   }
   ${scroll}
   ${animation}
+  body{
+    background: ${color.dark2};
+  }
+  li{
+    list-style:none;
+  }
+  a{
+    text-decoration:none;
+  }
 `
 const appLinks= {
   sorce:'https://github.com/mateusfaustino/consulta-de-endereco-pelo-cep',
@@ -30,7 +39,7 @@ function   App() {
      <Navbar appLinks={appLinks}/>
      <Switch>
        <Route path='/'>
-         <Cep/>
+         <TodoList/>
        </Route>
      </Switch>
    </Router>
