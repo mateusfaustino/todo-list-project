@@ -44,13 +44,26 @@ const Animations = `
             transform-origin: 100% 0%;
   }
 }
+@keyframes fastAppearing {
+  0% {
+    opacity:0;
+  }
+  20% {
+    display:block;
+    opacity:1;
+  }
+  100% {
+    display:none;
+    opacity:1;
+  }
+}
 
 
 `
 export const animation = {
   scaleUp:"-webkit-animation: scale-up-ver-top 1s ;animation: scale-up-ver-top 1s ;",
   rotating:"animation-name: rotating; animation-iteration-count: infinite;animation-duration: 1s;animation-timing-function: linear;",  
-  ripple:"animation-name: ripple; animation-duration: 1s;"  
-
+  ripple:"animation-name: ripple; animation-duration: 1s;",
+  fastAppearing:"animation-name:fastAppearing;animation-duration: 5s;"
 }
 export default Animations

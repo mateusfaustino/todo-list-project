@@ -1,9 +1,11 @@
 import React,{ useState } from 'react'
 import styled from 'styled-components'
-import { color,typography, border, breakpoint} from '../StyleGuide/styles'
-import Input from '../Components/Input'
+import { anime,color,typography, border, breakpoint} from '../StyleGuide/styles'
 import Title from '../Components/Title'
 import TodoNote from '../Components/TodoList/TodoNote'
+import TodoForm from '../Components/TodoList/TodoForm'
+import Item from '../Components/TodoList/Item'
+import PuttinDancing from '../Components/TodoList/Puttin'
 const Container = styled.div`
     width:100%;
     margin:auto;
@@ -24,30 +26,47 @@ const Container = styled.div`
     }
     
 `
+
     
 const Todo =  (props) => {
-    
+    const [puttinDancing, setPuttinDancing] = useState(false)
     const [items, setItems] = useState([])
-    const [text, setText] = useState()
-    function handleChange(event) {
-        let typedText = event.target.value
-        setText(typedText)
+    function onAddItem(text) {
+        let it = new Item(text);
+        setItems(([...items, it]))
     }
-    function AddItem(event) {
-        event.preventDefault()
-        if(text){
-            setItems(([...items, text]))
-            setText("")
+    function onItemDeleted(item){
+        let filteredItems = items.filter((it)=> it.id!=item.id)
+        if(window.confirm(`Deseja apagar o item ${item.text}? `)) {
+            setItems(filteredItems)
         }
+    }
+    function onPuttingDancing() {
+        setPuttinDancing(true)
+        setTimeout((time)=>{ 
+            setPuttinDancing(false)
+        }, 3000);
+    }
+    function onItemChecked (item) {
+        let updatedItems = items.map((it)=>{
+            if(it.id ==item.id){
+                if(it.isDone==false){
+                    onPuttingDancing()
+                }
+                it.isDone=!it.isDone;
+            }
+            return(it)
+        }) 
+        setItems(updatedItems);
     }
     return(
         <Container>
             <Title>To-Do List</Title>
-            <form>
-                <Input value={text} onClickButton={AddItem} onChange={handleChange} buttonText="Adicionar" placeholder="Adicione uma tarefa" type='text'></Input>               
-            </form>
-            <TodoNote items={items}/>
+            <TodoForm onAddItem={onAddItem}/>
+            <TodoNote onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
+            <PuttinDancing isPuttinDancing={puttinDancing} onPuttingDancing={onPuttingDancing}/>
         </Container>
+
 
     )
 }
