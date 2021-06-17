@@ -66,8 +66,6 @@ const Todo =  (props) => {
             <TodoNote onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
             <PuttinDancing isPuttinDancing={puttinDancing} onPuttingDancing={onPuttingDancing}/>
         </Container>
-
-
     )
 }
 export default Todo
