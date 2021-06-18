@@ -1,8 +1,8 @@
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { anime,color,typography, border, breakpoint} from '../StyleGuide/styles'
 import Title from '../Components/Title'
-import TodoNote from '../Components/TodoList/TodoNote'
+import TodoList from '../Components/TodoList/TodoList'
 import TodoForm from '../Components/TodoList/TodoForm'
 import Item from '../Components/TodoList/Item'
 import PuttinDancing from '../Components/TodoList/Puttin'
@@ -26,15 +26,26 @@ const Container = styled.div`
     }
     
 `
-
+const SAVED_ITEMS = 'savedItems'
     
 const Todo =  (props) => {
+    
     const [puttinDancing, setPuttinDancing] = useState(false)
     const [items, setItems] = useState([])
+    useEffect(()=>{
+        let savedItems = JSON.parse( localStorage.getItem(SAVED_ITEMS));
+        if(savedItems){
+            setItems(savedItems);
+        }
+    },[])
+    useEffect(()=>{
+        localStorage.setItem(SAVED_ITEMS,JSON.stringify(items))
+    },[items])
     function onAddItem(text) {
         let it = new Item(text);
         setItems(([...items, it]))
     }
+    
     function onItemDeleted(item){
         let filteredItems = items.filter((it)=> it.id!=item.id)
         if(window.confirm(`Deseja apagar o item ${item.text}? `)) {
@@ -63,7 +74,7 @@ const Todo =  (props) => {
         <Container>
             <Title>To-Do List</Title>
             <TodoForm onAddItem={onAddItem}/>
-            <TodoNote onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
+            <TodoList onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
             <PuttinDancing isPuttinDancing={puttinDancing} onPuttingDancing={onPuttingDancing}/>
         </Container>
     )

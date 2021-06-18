@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 import styled from 'styled-components'
 import { color,typography, border, breakpoint} from '../../StyleGuide/styles'
 import { MdDelete, MdCheckBox, MdCheckBoxOutlineBlank} from 'react-icons/md'
+import Item from './listItem'
 
 const TodoListWhapper = styled.div`
     width:100%;
@@ -57,7 +58,7 @@ const Li = styled.li`
         fill:${color.dark2}
     }
 `
-const TodoNote =  (props) => {
+const TodoList =  (props) => {
 
     return(
             <TodoListWhapper>
@@ -66,16 +67,10 @@ const TodoNote =  (props) => {
                 </Header>
                 <TodoListBody>
                     {props.items.map((item)=>
-                    <Li isChecked={item.isDone?true:false} key={item.id}>
-                        <div className='text'>
-                        <MdCheckBoxOutlineBlank onClick={()=>props.onItemChecked(item)} className="checkIcon blank"/>
-                        <MdCheckBox onClick={()=>props.onItemChecked(item)} className="checkIcon checked"/>
-                        {item.text}
-                        </div>
-                        <MdDelete onClick={()=>props.onItemDeleted(item)}/>
-                    </Li>)}
+                        <Item item={item} items={props.items} onItemChecked={props.onItemChecked} onItemDeleted={props.onItemDeleted}/>    
+                    )} 
                 </TodoListBody>
             </TodoListWhapper>
     )
 }
-export default TodoNote
+export default TodoList
