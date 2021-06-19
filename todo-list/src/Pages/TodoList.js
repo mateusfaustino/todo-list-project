@@ -6,10 +6,12 @@ import TodoList from '../Components/TodoList/TodoList'
 import TodoForm from '../Components/TodoList/TodoForm'
 import Item from '../Components/TodoList/Item'
 import PuttinDancing from '../Components/TodoList/Puttin'
+import FloatButton from '../Components/FloatActionButton'
+import Spacing from '../Components/atoms/spacing';
+const spacing = new Spacing(8,'8px','32px')
 const Container = styled.div`
     width:100%;
     margin:auto;
-    max-width:900px;
     height:100vh;
     display:flex;
     flex-direction:column;
@@ -17,12 +19,12 @@ const Container = styled.div`
     justify-content:flex-start;
     background:#10101E;
     width:100%;
-    padding: 20vw 10vw;
+    padding: 20vw ${spacing.margin};
     form{
         width:100%;
     }
     @media (min-width: ${breakpoint.mobile}) {
-        padding: 10vw 10vw;
+        padding: 10vw ${spacing.margin};
     }
     
 `
@@ -76,6 +78,7 @@ const Todo =  (props) => {
             <TodoForm onAddItem={onAddItem}/>
             <TodoList onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
             <PuttinDancing isPuttinDancing={puttinDancing} onPuttingDancing={onPuttingDancing}/>
+            <FloatButton/>
         </Container>
     )
 }

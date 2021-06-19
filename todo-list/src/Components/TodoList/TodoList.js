@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { color,typography, border, breakpoint} from '../../StyleGuide/styles'
 import { MdDelete, MdCheckBox, MdCheckBoxOutlineBlank} from 'react-icons/md'
 import Item from './listItem'
+import Spacing from '../atoms/spacing';
+const spacing = new Spacing(8,'8px','32px')
 
 const TodoListWhapper = styled.div`
     width:100%;
@@ -12,6 +14,7 @@ const TodoListWhapper = styled.div`
     justify-content:flex-start;
     border-radius:${border.border4};
     background: ${color.white};
+    
     `
     const Header = styled.div`
     border-radius: 4px 4px 0 0 ;
@@ -31,6 +34,7 @@ const TodoListWhapper = styled.div`
 const TodoListBody = styled.ul`
     width:100%;
     padding:8px;
+    min-height:100vh;
 `
 const Li = styled.li`
     display:flex;

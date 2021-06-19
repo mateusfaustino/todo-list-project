@@ -4,50 +4,53 @@ import { MdClose } from 'react-icons/md';
 import Logo from "./Logo"
 import Menu from "./Menu"
 import styled from 'styled-components';
+import Spacing from '../atoms/spacing';
+const spacing = new Spacing(8,'8px','32px')
 
 const Nav= styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 10vh;
-    background:rgba(0,0,0, 0.4);
-    color: #fff;
-    padding: 4px 10vw;
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    z-index:1;
-    
-    .nav__icon{
-        
-        height:5vh ;
-        width: auto;
-        
-        &.nav__close{
-            display:${props => props.icon==='close' ? 'block' : 'none' } ;
-        }
-        &.nav__bars{
-            display:${props => props.icon==='open' ? 'block' : 'none' } ;
-        }
-        &:hover{
-            cursor: pointer;
-        }
-    }
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 10vh;
+background:rgba(0,0,0, 0.4);
+color: #fff;
+padding: 4px ${spacing.margin};
+position:absolute;
+top:0;
+left:0;
+right:0;
+z-index:1;
 
-    @media screen and (min-width: 755px) {
+.nav__icon{
     
-        .nav__icon {
-            display: none !important;
-        }
-        
+    height:auto ;
+    width: ${spacing.cs};
+    max-width:40px;
     
+    &.nav__close{
+        display:${props => props.icon==='close' ? 'block' : 'none' } ;
+    }
+    &.nav__bars{
+        display:${props => props.icon==='open' ? 'block' : 'none' } ;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 755px) {
+
+    .nav__icon {
+        display: none !important;
     }
     
+
+}
+
 `
-
 const Navbar = (props) => {
-    const [isActive,setIsActive]=useState(false);
+
+   const [isActive,setIsActive]=useState(false);
     return (
         <>
             <Nav icon={isActive? 'close': 'open'}>

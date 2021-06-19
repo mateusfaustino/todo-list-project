@@ -3,11 +3,14 @@ import Navbar from './Components/Header';
 import scroll from './StyleGuide/atoms/scroll';
 import { animation, color } from './StyleGuide/styles';
 import { createGlobalStyle } from 'styled-components';
+import Grid from './Components/atoms/grid';
+import Spacing from './Components/atoms/spacing'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+const spacing = new Spacing(8,'8px','32px')
 const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
@@ -36,12 +39,13 @@ function   App() {
   return (
    <Router>
      <GlobalStyle/>
-     <Navbar appLinks={appLinks}/>
+     <Navbar spacing={spacing} appLinks={appLinks}/>
      <Switch>
        <Route path='/'>
          <TodoList/>
        </Route>
      </Switch>
+     <Grid Gap={spacing.gap} Margin={spacing.margin} Columns={spacing.columns}/>
    </Router>
   );
 }
