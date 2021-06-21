@@ -1,9 +1,9 @@
 import React,{ useState } from 'react'
 import styled from 'styled-components'
 import {palette} from '../../../style-guide/atoms/colors'
-import Spacing from '../../../style-guide/atoms/spacing';
 import Item from '../../item'
 
+import Spacing from '../../../style-guide/atoms/spacing';
 const spacing = new Spacing(8,'8px','32px')
 
 

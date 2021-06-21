@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import atom from '../../../style-guide/atoms'
 import { palette } from '../../../style-guide/atoms/colors'
 import Button from '../button'
+
 const Container = styled.div`
     display:flex;
     align-items:center;
