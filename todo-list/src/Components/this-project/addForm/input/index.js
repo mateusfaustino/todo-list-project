@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { border, shadow, color } from '../../../../StyleGuide/styles'
+import atom from '../../../style-guide/atoms'
+import { palette } from '../../../style-guide/atoms/colors'
 import Button from '../button'
 const Container = styled.div`
     display:flex;
@@ -12,8 +13,8 @@ const Container = styled.div`
     width:100%;
     background:#fff;
     margin: 8px 0;
-    border-radius: ${border.border8};
-    box-shadow:${shadow.shadow3};
+    border-radius: ${atom.border.border8};
+    box-shadow:${atom.shadow.shadow_3dp};
 
 `
 const Input = styled.input`
@@ -24,7 +25,7 @@ const Input = styled.input`
     font-family: "Segoe UI", sans-serif;
     width:100%;
     hight:100%;
-    border-radius:${border.border8};
+    border-radius:${atom.border.border8};
     line-height: 25px;
     border: none;
     margin: 7px 0 6px;
@@ -35,7 +36,7 @@ const Input = styled.input`
     word-wrap: break-word;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-    background: ${color.white}!important;
+    background: ${palette.background.light}!important;
 
 `
 const InputComponent = (props) =>

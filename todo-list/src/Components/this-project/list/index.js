@@ -1,7 +1,5 @@
 import React,{ useState } from 'react'
 import styled from 'styled-components'
-import { color,typography, border, breakpoint} from '../../../StyleGuide/styles'
-import { MdDelete, MdCheckBox, MdCheckBoxOutlineBlank} from 'react-icons/md'
 import Spacing from '../../style-guide/atoms/spacing';
 import StyledList from './styles'
 import Header from './header'

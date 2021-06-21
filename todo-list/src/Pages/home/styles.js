@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { anime,color,typography, border, breakpoint} from '../../StyleGuide/styles'
 import Spacing from '../../Components/style-guide/atoms/spacing';
 import { palette } from '../../Components/style-guide/atoms/colors';
+import atom from '../../Components/style-guide/atoms';
 const spacing = new Spacing(8,'8px','32px')
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const Container = styled.div`
     form{
         width:100%;
     }
-    @media (min-width: ${breakpoint.mobile}) {
+    @media (min-width: ${atom.breakpoint.mobile}) {
         padding: 10vw ${spacing.margin};
     }
     
