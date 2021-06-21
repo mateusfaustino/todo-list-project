@@ -1,8 +1,10 @@
 import { color, shadow, border,typography,breakpoint } from "../StyleGuide/styles"
 import styled from "styled-components"
 import { MdAdd } from 'react-icons/md';
+import Spacing from "./atoms/spacing";
 
-const Btn =styled.button`
+const Btn 
+=styled.button`
 width: fit-content;
 min-width: 136px;
 height: 36px;
