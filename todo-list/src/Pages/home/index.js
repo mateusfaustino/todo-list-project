@@ -1,11 +1,10 @@
 import React,{ useEffect, useState } from 'react'
-import Title from '../../Components/Title'
 import List from '../../Components/this-project/list'
-import Item from '../../Components/TodoList/Item'
+import Item from '../../Components/this-project/item/Item'
 import FloatButton from '../../Components/this-project/floatActionButton/'
 import StyledHome from './styles'
 import AddForm from '../../Components/this-project/addForm/index'
-import Spacing from '../../Components/atoms/spacing';
+import Spacing from '../../Components/style-guide/atoms/spacing';
 const spacing = new Spacing(8,'8px','32px')
 
 const SAVED_ITEMS = 'savedItems'

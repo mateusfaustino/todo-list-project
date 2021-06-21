@@ -9,7 +9,7 @@ const Container = styled.div`
     align-items:flex-start;
     justify-content:flex-start;
     border-radius:${atom.border};
-    background: ${palette.background.main};
+    box-shadow:${atom.shadow.shadow_8dp};
 `
 const StyledList = (props)=>
     <Container>{props.children}</Container>

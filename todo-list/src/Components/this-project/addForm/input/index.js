@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { border, shadow, color } from '../StyleGuide/styles'
-import {SearchButton} from '../Components/Button'
+import { border, shadow, color } from '../../../../StyleGuide/styles'
+import Button from '../button'
 const Container = styled.div`
     display:flex;
     align-items:center;
@@ -10,7 +10,6 @@ const Container = styled.div`
     color: #fff;
     font-family: "Segoe UI", sans-serif;
     width:100%;
-    max-width:900px;
     background:#fff;
     margin: 8px 0;
     border-radius: ${border.border8};
@@ -39,14 +38,11 @@ const Input = styled.input`
     background: ${color.white}!important;
 
 `
-const InputComponent = (props) =>{
-
-    return(
-        <Container >
-                <Input  value={props.value} onChange={props.onChange}  type="text" spellcheck="false" role="combobox" placeholder={props.placeholder} aria-live="polite"></Input>
-                <SearchButton onClick={props.onClickButton}>{props.buttonText}</SearchButton>
-        </Container>
-    )
-}
+const InputComponent = (props) =>
+    <Container >
+            <Input  value={props.value} onChange={props.onChange}  type="text" spellcheck="false" role="combobox" placeholder={props.placeholder} aria-live="polite"></Input>
+            <Button onClick={props.onClickButton}>{props.buttonText}</Button>
+    </Container>
 
 export default InputComponent
+ 

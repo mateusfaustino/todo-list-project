@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Input from '../../Input'
+import Input from './input'
 
 const TodoForm =  (props) => {
     const [text, setText] = useState()

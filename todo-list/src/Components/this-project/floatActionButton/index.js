@@ -1,6 +1,6 @@
 import {styled} from '@material-ui/core/styles'
 import Fab from '@material-ui/core/fab'
-import atom from '../../atoms'
+import atom from '../../style-guide/atoms'
 import { flexbox } from '@material-ui/system'
 
 const FloatButton = styled(Fab)({
