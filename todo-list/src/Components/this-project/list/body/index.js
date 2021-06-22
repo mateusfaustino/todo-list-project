@@ -9,9 +9,6 @@ const spacing = new Spacing(8,'8px','32px')
 
 const Container = styled.ul`
 width:100%;
-padding:8px;
-min-height:100vh;
-background:${palette.background.light};
 `
 const Body =  (props) => 
     <Container>

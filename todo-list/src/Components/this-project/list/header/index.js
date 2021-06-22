@@ -13,11 +13,12 @@ border-radius: 4px 4px 0 0 ;
     align-items:center;
     justify-content:center;        
     width:100%;
-    background:${palette.primary.main};
     padding:8px;
+    margin-bottom:8px;
+    border-bottom: 1px solid ${palette.primary.main};
     h2{
         ${atom.typography.header1}
-        color:${palette.primary.onMainText};
+        color:${palette.primary.dark};
         font-weight: 400;
     }
 

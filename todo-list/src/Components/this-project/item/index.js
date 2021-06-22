@@ -7,10 +7,12 @@ const Li = styled.li`
     display:flex;
     justify-content:space-between;
     margin-bottom:8px;
+    padding:8px;
     width:100%;
+    background:${palette.background.light};
+    box-shadow:${atom.shadow.shadow_4dp};
     ${atom.typography.paragraphBold}
     
-    border-bottom: 1px solid ${palette.primary.dark};
     .text{
         display:flex;
         align-items:center;
@@ -25,9 +27,10 @@ const Li = styled.li`
         }
     }
     svg{
-        height:21px;
+        height:24px;
         width:auto;
-        fill:${palette.primary.dark}
+        fill:${palette.primary.dark};
+        margin-right:8px;
     }
 `
 const Item =  (props) => {
