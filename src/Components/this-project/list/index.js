@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import styled from 'styled-components'
-import Spacing from '../../style-guide/atoms/spacing';
+import Spacing from '../../styleguide/atoms/spacing';
 import StyledList from './styles'
 import Header from './header'
 import Body from './body'

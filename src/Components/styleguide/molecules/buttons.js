@@ -189,6 +189,9 @@ const ContainedButton = (props)=>{
             disabled={props.disabled}
             color={props.color?props.color:'primary'}
             size={props.size?props.size:'medium'}
+            onClick={props.onClick}
+            type={props.type}
+            className={props.className}
         >
             {props.children}
         </StyledContainedButton>
@@ -215,6 +218,8 @@ export const TextButton = (props)=>{
             disabled={props.disabled}
             color={props.color?props.color:'primary'}
             size={props.size?props.size:'medium'}
+            type={props.type}
+            
         >
             {props.children}
         </StyledTextButton>

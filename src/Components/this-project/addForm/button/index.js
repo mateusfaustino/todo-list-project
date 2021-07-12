@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import { MdAdd } from 'react-icons/md';
-
-import { palette } from "../../../style-guide/atoms/colors";
-import atom from "../../../style-guide/atoms";
+import typography from "../../../styleguide/atoms/typography";
+import breakpoint from "../../../styleguide/atoms/breakpoints";
+import { palette } from "../../../styleguide/atoms/colors";
+import shadow from "../../../styleguide/atoms/shadows";
 
 
 const SearchBtn =styled.button`
@@ -20,7 +21,7 @@ cursor: pointer;
 position: relative;
 border: none;
 outline: 0;
-box-shadow: ${atom.shadow.shadow_2dp};
+box-shadow: ${shadow.shadow_2dp};
 p{
     display:none;
 }
@@ -29,7 +30,7 @@ svg{
     width:32px;
     height:32px;
 }
-@media (min-width: ${atom.breakpoint.mobile}) {
+@media (min-width: ${breakpoint.mobile}) {
     p{
         display:block;
     }
@@ -40,7 +41,7 @@ svg{
 `
 const Text = styled.p`
     padding:8px;
-    ${atom.typography.paragraphBold}
+    ${typography.paragraphBold}
     color:${palette.secondary.onMainText};
     text-align: center;
     &::selection {

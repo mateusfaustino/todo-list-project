@@ -1,8 +1,8 @@
 import Home from './Pages/home/index'
-import Navbar from './Components/style-guide/molecules/Header/index';
-import Grid from './Components/style-guide/atoms/grid';
-import Spacing from './Components/style-guide/atoms/spacing';
-import GlobalStyle from './Components/style-guide/atoms/global';
+import Navbar from './Components/styleguide/molecules/Header';
+import Grid from './Components/styleguide/atoms/grid';
+import Spacing from './Components/styleguide/atoms/spacing';
+import GlobalStyle from './Components/styleguide/atoms/global';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 
 const spacing = new Spacing(8,'8px','32px')

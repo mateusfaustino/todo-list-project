@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import atom from '../../style-guide/atoms'
-import { palette } from '../../style-guide/atoms/colors'
+import atom from '../../styleguide/atoms'
+import { palette } from '../../styleguide/atoms/colors'
 
 const Container = styled.div`
     width:100%;

@@ -1,8 +1,8 @@
 import React,{ useState } from 'react'
 import styled from 'styled-components'
-import atom from '../../../style-guide/atoms'
-import {palette} from '../../../style-guide/atoms/colors'
-import Spacing from '../../../style-guide/atoms/spacing';
+import typography from '../../../styleguide/atoms/typography'
+import {palette} from '../../../styleguide/atoms/colors'
+import Spacing from '../../../styleguide/atoms/spacing';
 const spacing = new Spacing(8,'8px','32px')
 
 
@@ -17,7 +17,7 @@ border-radius: 4px 4px 0 0 ;
     margin-bottom:8px;
     border-bottom: 1px solid ${palette.primary.main};
     h2{
-        ${atom.typography.header1}
+        ${typography.header1}
         color:${palette.primary.dark};
         font-weight: 400;
     }

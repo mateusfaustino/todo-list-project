@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import Spacing from '../../Components/style-guide/atoms/spacing';
-import { palette } from '../../Components/style-guide/atoms/colors';
-import atom from '../../Components/style-guide/atoms';
+import Spacing from '../../Components/styleguide/atoms/spacing';
+import { palette } from '../../Components/styleguide/atoms/colors';
+import atom from '../../Components/styleguide/atoms';
 const spacing = new Spacing(8,'8px','32px')
 
 const Container = styled.div`

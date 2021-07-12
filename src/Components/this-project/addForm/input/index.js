@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import atom from '../../../style-guide/atoms'
-import { palette } from '../../../style-guide/atoms/colors'
+import border from '../../../styleguide/atoms/borders'
+import shadow from '../../../styleguide/atoms/shadows'
+import { palette } from '../../../styleguide/atoms/colors'
 import Button from '../button'
 
 const Container = styled.div`
@@ -14,8 +15,8 @@ const Container = styled.div`
     width:100%;
     background:#fff;
     margin: 8px 0;
-    border-radius: ${atom.border.border8};
-    box-shadow:${atom.shadow.shadow_3dp};
+    border-radius: ${border.border8};
+    box-shadow:${shadow.shadow_3dp};
 
 `
 const Input = styled.input`
@@ -26,7 +27,7 @@ const Input = styled.input`
     font-family: "Segoe UI", sans-serif;
     width:100%;
     hight:100%;
-    border-radius:${atom.border.border8};
+    border-radius:${border.border8};
     line-height: 25px;
     border: none;
     margin: 7px 0 6px;

@@ -4,7 +4,8 @@ import Item from '../../Components/this-project/item/Item'
 import FloatButton from '../../Components/this-project/floatActionButton/'
 import StyledHome from './styles'
 import AddForm from '../../Components/this-project/addForm/index'
-import Spacing from '../../Components/style-guide/atoms/spacing';
+import Spacing from '../../Components/styleguide/atoms/spacing';
+import { Router } from 'react-router'
 const spacing = new Spacing(8,'8px','32px')
 
 const SAVED_ITEMS = 'savedItems'
@@ -45,9 +46,12 @@ const Todo =  (props) => {
     }
     return(
         <StyledHome>
-            <AddForm  onAddItem={onAddItem}/>
-            <List onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
-            <FloatButton/>
+            <Router>
+                <AddForm  onAddItem={onAddItem}/>
+                <List onItemChecked={onItemChecked} onItemDeleted={onItemDeleted} items={items}/>
+                <FloatButton/>
+
+            </Router>
         </StyledHome>
     )
 }

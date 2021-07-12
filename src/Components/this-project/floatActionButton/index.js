@@ -1,8 +1,8 @@
 import {styled} from '@material-ui/core/styles'
 import Fab from '@material-ui/core/fab'
-import atom from '../../style-guide/atoms'
-import Spacing from '../../style-guide/atoms/spacing';
-import { palette } from '../../style-guide/atoms/colors';
+import atom from '../../styleguide/atoms'
+import Spacing from '../../styleguide/atoms/spacing';
+import { palette } from '../../styleguide/atoms/colors';
 import { MdAdd } from 'react-icons/md';
 const spacing = new Spacing(8,'8px','32px')
 
